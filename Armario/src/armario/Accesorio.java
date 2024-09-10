@@ -6,10 +6,8 @@ package armario;
 
 /**
  *
- * @author laura
+ * @author estudiantes
  */
-public class Pantalon extends Vestimenta{
-    public Pantalon(String estilo, String color) {
-        super(estilo, color);
-    }
+public class Accesorio {
+    
 }
