@@ -1,0 +1,64 @@
+@startuml
+interface CaracteristicaPrenda {
+    +getEstilo(): String
+    +getColor(): String
+    +mostrarInfo(): void
+}
+interface IRopa{
+    +planchar(): void
+}
+
+abstract class Vestimenta {
+    -estilo: String
+    -color: String
+    +getEstilo(): String
+    +getColor(): String
+}
+
+class Camiseta {
+}
+
+class Pantalon {
+}
+
+class Zapatos {
+}
+class Accesorio{
+}
+class Armario {
+    -camisetas: Vestimenta []
+    -pantalones: Vestimenta[]
+    -zapatos: Vestimenta[]
+    -camisetaSeleccionada: Vestimenta
+    -pantalonSeleccionado: Vestimenta
+    -zapatosSeleccionados: Vestimenta
+    -random: Random
+    +seleccionarCamiseta(): void
+    +seleccionarPantalon(): void    
+    +seleccionarZapatos(): void
+    +seleccionarAleatorio(): void
+    +mostrarSeleccion(): void
+    -mostrarOpciones(): void
+    -mostrarVestimenta(): void    
+    
+}
+class Menu {
+    -armario: Armario
+    -scanner: Scanner
+    +mostrarMenu(): void
+    +manejarOpcion(): void
+
+}
+
+
+CaracteristicaPrenda <|.. Vestimenta 
+Vestimenta <|-- Camiseta
+Vestimenta <|-- Pantalon
+Vestimenta <|-- Zapatos
+Vestimenta <|-- Accesorio
+IRopa <|.. Camiseta
+IRopa <|.. Pantalon
+Armario --> Menu
+Armario *-- Vestimenta 
+ 
+@enduml
